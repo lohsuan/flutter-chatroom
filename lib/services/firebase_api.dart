@@ -15,4 +15,12 @@ class FirebaseApi {
 
     return await refMessages.add(newMessage.toJson());
   }
+
+  static Stream<QuerySnapshot> getMessages() {
+    return FirebaseFirestore.instance
+        .collection('messages')
+        .orderBy('createAt', descending: true)
+        .snapshots();
+  }
+
 }

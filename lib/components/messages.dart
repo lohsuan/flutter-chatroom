@@ -1,5 +1,8 @@
+import 'dart:math';
+
 import 'package:chatbot/components/message.dart';
 import 'package:chatbot/current_user.dart';
+import 'package:chatbot/services/firebase_api.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -9,15 +12,11 @@ class Messages extends StatefulWidget {
 }
 
 class _MessagesState extends State<Messages> {
-  final Stream<QuerySnapshot> _messagesStream = FirebaseFirestore.instance
-      .collection('messages')
-      .orderBy('createAt', descending: true)
-      .snapshots();
 
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-      stream: _messagesStream,
+      stream: FirebaseApi.getMessages(),
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) {
           return Text('Something went wrong');
@@ -31,7 +30,7 @@ class _MessagesState extends State<Messages> {
             Map<String, dynamic> data =
                 document.data()! as Map<String, dynamic>;
             bool isMe = data['sender'] == ConversationUsers.sender;
-            return MessageWidget(isMe: isMe, message: data['message']);
+            return MessageWidget(isMe: isMe, message: data['message'], sender: data['sender'],);
           }).toList(),
         );
       },
