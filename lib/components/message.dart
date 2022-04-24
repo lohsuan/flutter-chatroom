@@ -40,7 +40,7 @@ class MessageWidget extends StatelessWidget {
                 ),
               Container(
                 padding: const EdgeInsets.fromLTRB(16, 10, 16, 10),
-                margin: const EdgeInsets.fromLTRB(16, 3, 16, 14),
+                margin: const EdgeInsets.fromLTRB(16, 5, 16, 16),
                 constraints: const BoxConstraints(maxWidth: 240),
                 decoration: BoxDecoration(
                   color:

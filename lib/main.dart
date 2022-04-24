@@ -1,4 +1,5 @@
 import 'package:chatbot/screens/chat_room_page.dart';
+import 'package:chatbot/screens/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: ChatRoomPage(),
+      home: LoginPage(),
     );
   }
 }
