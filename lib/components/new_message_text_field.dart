@@ -20,8 +20,7 @@ class _NewMessageWidgetState extends State<NewMessageTextField> {
   String message = '';
 
   void sendMessage() async {
-    // FocusScope.of(context).unfocus();
-    // await FirebaseApi.uploadMessage(widget.sender, message);
+    await FirebaseApi.uploadMessage(widget.sender, message);
     _controller.clear();
   }
 
