@@ -2,12 +2,7 @@ import 'package:chatbot/components/messages.dart';
 import 'package:chatbot/components/new_message_field.dart';
 import 'package:flutter/material.dart';
 
-class ChatRoomPage extends StatefulWidget {
-  @override
-  _ChatRoomPageState createState() => _ChatRoomPageState();
-}
-
-class _ChatRoomPageState extends State<ChatRoomPage> {
+class ChatRoomPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
