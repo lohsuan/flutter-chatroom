@@ -18,6 +18,9 @@ class _LoginPageState extends State<LoginPage> {
       return ChatRoomPage();
     }));
     _controller.clear();
+    setState(() {
+      message = '';
+    });
   }
 
   @override
@@ -63,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                 height: 50,
                 width: 250,
                 child: FloatingActionButton(
-                  onPressed: _controller.text.isEmpty ? null : login,
+                  onPressed: message.trim().isEmpty ? null : login,
                   child: const Text("LOGIN"),
                   backgroundColor: Colors.blue,
                   elevation: 20,

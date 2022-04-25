@@ -1,5 +1,3 @@
-import 'package:chatbot/models/message.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MessageWidget extends StatelessWidget {
@@ -12,18 +10,18 @@ class MessageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final radius = Radius.circular(12);
-    final borderRadius = BorderRadius.all(radius);
+    const radius = Radius.circular(12);
+    const borderRadius = BorderRadius.all(radius);
 
     return Column(
         crossAxisAlignment:
             isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
         children: <Widget>[
           if (!isMe)
-          Text(
-            sender,
-            style: TextStyle(fontSize: 12),
-          ),
+            Text(
+              sender,
+              style: const TextStyle(fontSize: 12),
+            ),
           Row(
             mainAxisAlignment:
                 isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
@@ -46,10 +44,10 @@ class MessageWidget extends StatelessWidget {
                   color:
                       isMe ? Colors.grey[300] : Theme.of(context).accentColor,
                   borderRadius: isMe
-                      ? borderRadius
-                          .subtract(BorderRadius.only(bottomRight: radius))
-                      : borderRadius
-                          .subtract(BorderRadius.only(bottomLeft: radius)),
+                      ? borderRadius.subtract(
+                          const BorderRadius.only(bottomRight: radius))
+                      : borderRadius.subtract(
+                          const BorderRadius.only(bottomLeft: radius)),
                 ),
                 child: buildMessage(),
               ),

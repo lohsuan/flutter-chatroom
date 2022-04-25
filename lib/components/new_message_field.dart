@@ -13,6 +13,9 @@ class _NewMessageWidgetState extends State<NewMessageField> {
   void sendMessage() async {
     await FirebaseApi.uploadMessage(message);
     _controller.clear();
+    setState(() {
+      message = '';
+    });
   }
 
   @override

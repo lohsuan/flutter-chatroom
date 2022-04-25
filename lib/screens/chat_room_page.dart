@@ -12,7 +12,7 @@ class _ChatRoomPageState extends State<ChatRoomPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Line Channel"),
+        title: const Text("Lobby Channel"),
       ),
       body: Stack(
         children: <Widget>[
