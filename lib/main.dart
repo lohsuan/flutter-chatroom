@@ -1,4 +1,3 @@
-import 'package:chatbot/screens/chat_room_page.dart';
 import 'package:chatbot/screens/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
