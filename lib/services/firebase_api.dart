@@ -12,7 +12,6 @@ class FirebaseApi {
       message: message,
       createAt: DateTime.now(),
     );
-
     return await refMessages.add(newMessage.toJson());
   }
 
@@ -22,5 +21,4 @@ class FirebaseApi {
         .orderBy('createAt', descending: true)
         .snapshots();
   }
-
 }
