@@ -1,5 +1,4 @@
 # flutter-chatroom
-Chatroom App for 2022 LINE Tech Fresh Presentation - Android
 
 | lobby | chatroom |
 | -------- | -------- |
